@@ -3,7 +3,10 @@ try:
 except ImportError:
     import profile
 import pstats
-from cStringIO import StringIO
+try:
+    from io import StringIO
+except ImportError:
+    from cStringIO import StringIO
 from django.conf import settings
 
 
